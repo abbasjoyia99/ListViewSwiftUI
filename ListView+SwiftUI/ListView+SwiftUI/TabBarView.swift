@@ -7,9 +7,30 @@
 
 import SwiftUI
 
+
+
 struct TabBarView: View {
+    @State var movies: [Movie] = TestData.movies
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            NavigationView {
+                MoviesView(movies: $movies, showOnlyFavorites: false)
+            }
+            .tabItem {
+                Image(systemName: "list.bullet")
+                    .font(.system(size: 26))
+                Text("All movies")
+            }
+            NavigationView {
+                MoviesView(movies: $movies, showOnlyFavorites: true)
+            }
+            .tabItem {
+                Image(systemName: "heart")
+                    .font(.system(size: 26))
+                Text("Favorites")
+            }
+        }
     }
 }
 

@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct Heart: View {
+    let isFilled: Bool;
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: isFilled ? "heart.fill" : "heart")
+            .foregroundColor(isFilled ? .red : .secondary)
     }
 }
 
-struct Heart_Previews: PreviewProvider {
+struct HeartSymbol_Previews: PreviewProvider {
     static var previews: some View {
-        Heart()
+        Group {
+            Heart(isFilled: true)
+            Heart(isFilled: false)
+        }
+        .padding()
+        .previewLayout(.sizeThatFits)
     }
 }
