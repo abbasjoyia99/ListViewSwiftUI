@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ListView+SwiftUI' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ListView+SwiftUI
+  pod 'AppCenter'
+
+  target 'ListView+SwiftUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ListView+SwiftUIUITests' do
+    # Pods for testing
+  end
+
+end
